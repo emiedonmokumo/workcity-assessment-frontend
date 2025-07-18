@@ -17,6 +17,11 @@ const Signup = () => {
         role: isAdmin ? 'admin' : 'user'
     })
 
+    // effect to update role based on isAdmin state
+    useEffect(() => {
+        setUserData(prev => ({ ...prev, role: isAdmin ? 'admin' : 'user' }));
+    }, [isAdmin]);
+
 
     useEffect(() => {
         if (isLoggedIn) {
